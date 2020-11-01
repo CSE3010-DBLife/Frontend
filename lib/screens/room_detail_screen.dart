@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_management/component/custom_title.dart';
+import 'package:hotel_management/components/custom_title.dart';
 
 class RoomDetailScreen extends StatefulWidget {
   @override
