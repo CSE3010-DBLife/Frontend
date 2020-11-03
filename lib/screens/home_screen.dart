@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_management/screens/room_detail_screen.dart';
 import 'package:hotel_management/screens/room_screen.dart';
 import 'package:hotel_management/screens/parking_screen.dart';
 import 'package:hotel_management/screens/employ_screen.dart';
