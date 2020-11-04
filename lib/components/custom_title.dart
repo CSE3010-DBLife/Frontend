@@ -7,12 +7,15 @@ class CustomTitle extends StatelessWidget {
   final Function searchIconOnPressed;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(title, style: Theme.of(context).textTheme.headline6),
-        searchIcon != null ? IconButton(icon: searchIcon, onPressed: searchIconOnPressed) : SizedBox()
-      ],
+    return Container(
+      margin: EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title, style: Theme.of(context).textTheme.headline6),
+          searchIcon != null ? IconButton(icon: searchIcon, onPressed: searchIconOnPressed) : SizedBox()
+        ],
+      ),
     );
   }
 }
