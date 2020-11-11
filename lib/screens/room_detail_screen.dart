@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotel_management/components/custom_title.dart';
 import 'package:hotel_management/components/reusable_card.dart';
 import 'package:hotel_management/components/reusable_status.dart';
+import 'package:hotel_management/screens/request_screen.dart';
 import 'package:hotel_management/utilities/constants.dart';
 
 class RoomDetailScreen extends StatefulWidget {
@@ -193,7 +194,7 @@ class _RoomDetailScreenState extends State<RoomDetailScreen> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Container(
-                                  margin: EdgeInsets.only(right: 8.0),
+                                  margin: EdgeInsets.only(right: 4.0),
                                   child: Text(
                                     '18형/트윈 베드/800,000원',
                                     style: Theme.of(context).textTheme.subtitle1,
@@ -209,22 +210,20 @@ class _RoomDetailScreenState extends State<RoomDetailScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 16.0),
-            Expanded(
-              child: GestureDetector(
-                onTap: () {},
-                child: ReusableCard(
-                  decoration: buttonDecoration,
-                  cardChild: Center(
-                    child: Text(
-                      '요청사항 확인',
-                      style: Theme.of(context).textTheme.subtitle1.copyWith(color: Colors.blue),
-                    ),
-                  ),
-                ),
-              ),
-            ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Container(
+          child: Icon(Icons.message),
+        ),
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return RequestScreen();
+            },
+          ),
         ),
       ),
     );
