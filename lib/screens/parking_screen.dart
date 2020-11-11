@@ -55,7 +55,7 @@ class _ParkingScreenState extends State<ParkingScreen> {
                               padding: const EdgeInsets.fromLTRB(12.0, 8.0, 16.0, 8.0),
                               child: Text(
                                 '123/500 (24.6%)',
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context).textTheme.subtitle1,
                               ),
                             ),
                           ],
@@ -95,25 +95,15 @@ class _ParkingScreenState extends State<ParkingScreen> {
                           children: [
                             Container(
                               width: 160,
-                              padding: const EdgeInsets.fromLTRB(12.0, 8.0, 16.0, 8.0),
+                              padding: const EdgeInsets.fromLTRB(12.0, 8.0, 8.0, 16.0),
                               child: TextField(
-                                  maxLength: 4,
-                                  maxLengthEnforced: true,
-                                  style: Theme.of(context).textTheme.headline6,
-                                  decoration: InputDecoration(
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: const Color(0xFFE7E7E7)),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: const Color(0xFFE7E7E7)),
-                                    ),
-                                    border: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: const Color(0xFFE7E7E7)),
-                                    ),
-                                    hintText: '차량번호',
-                                    hintStyle: Theme.of(context).textTheme.headline6,
-                                  ),
-                                  onChanged: (String str) {}),
+                                cursorColor: Color(0xFFE7E7E7),
+                                maxLength: 4,
+                                maxLengthEnforced: true,
+                                style: Theme.of(context).textTheme.subtitle1,
+                                decoration: InputDecoration(hintText: '차량번호', hintStyle: Theme.of(context).textTheme.subtitle1, counterText: ""),
+                                onChanged: (String str) {},
+                              ),
                             ),
                             GestureDetector(
                               onTap: () {},
@@ -160,10 +150,10 @@ class _ParkingScreenState extends State<ParkingScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(12.0, 8.0, 16.0, 8.0),
+                              padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 8.0),
                               child: Text(
                                 '정아무개\n\n18묵 1818\n\n101호 (20.11.10 ~ 20.11.10)',
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context).textTheme.subtitle1,
                               ),
                             ),
                           ],
