@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
 ThemeData darkThemeData = ThemeData(
+  inputDecorationTheme: InputDecorationTheme(
+    enabledBorder: UnderlineInputBorder(
+      borderSide: BorderSide(color: const Color(0xFFE7E7E7)),
+    ),
+    focusedBorder: UnderlineInputBorder(
+      borderSide: BorderSide(color: const Color(0xFFE7E7E7)),
+    ),
+    border: UnderlineInputBorder(
+      borderSide: BorderSide(color: const Color(0xFFE7E7E7)),
+    ),
+  ),
   scaffoldBackgroundColor: Color(0xFF121212),
   textTheme: TextTheme(
     subtitle1: TextStyle(color: Color(0xFFE7E7E7), fontSize: 15, fontFamily: 'Godo-M'),

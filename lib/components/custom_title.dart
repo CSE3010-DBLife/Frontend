@@ -13,7 +13,16 @@ class CustomTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title, style: Theme.of(context).textTheme.headline6),
-          searchIcon != null ? IconButton(icon: searchIcon, onPressed: searchIconOnPressed) : SizedBox()
+          searchIcon != null
+              ? IconButton(padding: EdgeInsets.zero, icon: searchIcon, onPressed: searchIconOnPressed)
+              : IconButton(
+                  // remove icon, due to padding
+                  padding: EdgeInsets.zero,
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.black.withOpacity(0.0),
+                  ),
+                )
         ],
       ),
     );
