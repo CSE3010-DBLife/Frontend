@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_management/components/reusable_card.dart';
 import 'package:hotel_management/components/reusable_status.dart';
+import 'package:hotel_management/screens/employ_detail_screen.dart';
 import 'package:hotel_management/utilities/constants.dart';
 
 class SummaryCardBuilder extends StatelessWidget {
@@ -10,7 +11,7 @@ class SummaryCardBuilder extends StatelessWidget {
         child: GestureDetector(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return null;
+                return EmployDetailScreen();
               }));
             },
             child: ReusableCard(

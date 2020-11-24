@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_management/components/custom_title.dart';
 import 'package:hotel_management/components/reusable_status.dart';
+import 'package:hotel_management/futurebuilders/room_detail/detail_card_builder.dart';
 import 'package:hotel_management/futurebuilders/room_detail/contact_card_builder.dart';
 import 'package:hotel_management/futurebuilders/room_detail/member_card_builder.dart';
 import 'package:hotel_management/screens/request_screen.dart';
@@ -37,6 +38,7 @@ class _RoomDetailScreenState extends State<RoomDetailScreen> {
             SizedBox(height: 16),
             MemberCardBuilder(),
             SizedBox(height: 16.0),
+            DetailCardBuilder()
           ],
         ),
       ),

@@ -15,7 +15,7 @@ class _EmployScreenState extends State<EmployScreen> {
         child: Column(
           children: [
             CustomTitle(
-              title: '직원',
+              title: '직원(관리자용)',
               searchIcon: Icon(Icons.search),
               searchIconOnPressed: () {},
             ),
