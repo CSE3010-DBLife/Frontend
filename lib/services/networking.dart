@@ -9,7 +9,7 @@ class NetWorkHelper {
     try {
       var response = await http.post(url, body: body);
       if (response.statusCode == 200) {
-        String _data = response.body;
+        String _data = utf8.decode(response.bodyBytes);
         return jsonDecode(_data);
       } else {
         return response.statusCode.toString();
@@ -23,7 +23,7 @@ class NetWorkHelper {
     try {
       http.Response response = await http.get(url);
       if (response.statusCode == 200) {
-        String _data = response.body;
+        String _data = utf8.decode(response.bodyBytes);
         return jsonDecode(_data);
       } else {
         print(response.statusCode);
