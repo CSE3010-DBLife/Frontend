@@ -36,7 +36,7 @@ class RoomCard extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(right: 8.0),
-                  child: ReusableStatus(color: statusGreen),
+                  child: ReusableStatus(color: getRoomStatusColor(status)),
                 ),
               ],
             ),
@@ -71,4 +71,17 @@ String getRoomStatus(String status) {
     return "외출 중";
   else
     return "오류";
+}
+
+Color getRoomStatusColor(String status) {
+  if (status == "0")
+    return statusGrey;
+  else if (status == "1")
+    return statusGreen;
+  else if (status == "2")
+    return statusRed;
+  else if (status == "3")
+    return statusOrange;
+  else
+    return Colors.black;
 }
