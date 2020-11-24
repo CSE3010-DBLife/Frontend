@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hotel_management/components/reusable_card.dart';
 import 'package:hotel_management/utilities/constants.dart';
 
-class DetailCardBuilder extends StatelessWidget {
+class DetailCard extends StatelessWidget {
+  DetailCard({this.roomInfo});
+  final String roomInfo;
   @override
   Widget build(BuildContext context) {
     return ReusableCard(
