@@ -2,42 +2,47 @@ class RoomDetail {
   String id;
   String status;
   String cusName;
-  String cusphoneNum;
-  String cusparkNum;
-  String cusaddress;
-  int adultCount;
-  int teenCount;
+  String cusPhoneNum;
+  String cusParkNum;
+  String cusAddress;
+  String cusRequest;
+  String adultCount;
+  String teenCount;
   String roomSize;
   String roomType;
   String roomPrice;
+  String duration;
 
   RoomDetail({
     this.id,
     this.status,
     this.cusName,
-    this.cusphoneNum,
-    this.cusparkNum,
-    this.cusaddress,
+    this.cusPhoneNum,
+    this.cusParkNum,
+    this.cusAddress,
+    this.cusRequest,
     this.adultCount,
     this.teenCount,
     this.roomSize,
     this.roomType,
     this.roomPrice,
+    this.duration,
   });
 
   factory RoomDetail.fromJSON(Map<dynamic, dynamic> json) {
     return RoomDetail(
-      id: json['id'],
-      status: json['status'],
-      cusName: json['cusName'],
-      cusphoneNum: json['cusphoneNum'],
-      cusparkNum: json['cusparkNum'],
-      cusaddress: json['cusaddress'],
-      adultCount: json['adultCount'],
-      teenCount: json['teenCount'],
-      roomSize: json['roomSize'],
-      roomType: json['roomType'],
-      roomPrice: json['roomPrice'],
-    );
+        id: json['id'],
+        status: json['status'],
+        cusName: json['cusName'],
+        cusPhoneNum: json['cusPhoneNum'],
+        cusParkNum: json['cusParkNum'],
+        cusAddress: json['cusAddress'],
+        cusRequest: json['cusRequest'],
+        adultCount: json['adultCount'],
+        teenCount: json['teenCount'],
+        roomSize: json['roomSize'],
+        roomType: json['roomType'],
+        roomPrice: json['roomPrice'],
+        duration: json['duration']);
   }
 }

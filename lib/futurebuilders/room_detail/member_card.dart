@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:hotel_management/components/reusable_card.dart';
 import 'package:hotel_management/utilities/constants.dart';
 
-class MemberCardBuilder extends StatelessWidget {
+class MemberCard extends StatelessWidget {
+  MemberCard({this.adultCount, this.teenCount});
+  final String adultCount;
+  final String teenCount;
+
   @override
   Widget build(BuildContext context) {
     return ReusableCard(
@@ -39,7 +43,7 @@ class MemberCardBuilder extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            '2명',
+                            adultCount ?? "오류",
                             style: Theme.of(context).textTheme.subtitle1,
                           ),
                         ],
@@ -64,7 +68,7 @@ class MemberCardBuilder extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            '2명',
+                            teenCount ?? "오류",
                             style: Theme.of(context).textTheme.subtitle1,
                           ),
                         ],
