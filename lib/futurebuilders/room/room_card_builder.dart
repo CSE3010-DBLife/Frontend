@@ -1,8 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_management/components/reusable_card.dart';
 import 'package:hotel_management/components/reusable_status.dart';
+import 'package:hotel_management/models/room.dart';
 import 'package:hotel_management/screens/room_detail_screen.dart';
+import 'package:hotel_management/services/roomQuery.dart';
 import 'package:hotel_management/utilities/constants.dart';
+import 'package:hotel_management/utilities/statusWorker.dart';
+
+RoomQuery _roomQuery = RoomQuery();
+
+class RoomCardBuilder extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: FutureBuilder<List<Room>>(
+        future: _roomQuery.getRoomData(),
+        builder: (context, AsyncSnapshot<List<Room>> snapshot) {
+          if (snapshot.data == null || snapshot.data.isEmpty) {
+            return Center(
+              child: Text(
+                '방 정보가 없습니다',
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
+            );
+          }
+
+          return ListView.builder(
+            itemCount: snapshot.data.length,
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  RoomCard(
+                    id: snapshot.data[index].id ?? "오류",
+                    status: snapshot.data[index].status ?? "오류",
+                  ),
+                  SizedBox(height: 16),
+                ],
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
 
 class RoomCard extends StatelessWidget {
   const RoomCard({
@@ -16,7 +57,7 @@ class RoomCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return RoomDetailScreen();
+          return RoomDetailScreen(roomId: id);
         }));
       },
       child: ReusableCard(
@@ -36,7 +77,7 @@ class RoomCard extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(right: 8.0),
-                  child: ReusableStatus(color: getRoomStatusColor(status)),
+                  child: ReusableStatus(color: StatusWorker.getRoomStatusColor(status)),
                 ),
               ],
             ),
@@ -47,7 +88,7 @@ class RoomCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 8.0, 16.0, 8.0),
                   child: Text(
-                    getRoomStatus(status),
+                    StatusWorker.getRoomStatus(status),
                     style: Theme.of(context).textTheme.headline6,
                   ),
                 ),
@@ -58,30 +99,4 @@ class RoomCard extends StatelessWidget {
       ),
     );
   }
-}
-
-String getRoomStatus(String status) {
-  if (status == "0")
-    return "예약 가능";
-  else if (status == "1")
-    return "예약 됨";
-  else if (status == "2")
-    return "사용 중";
-  else if (status == "3")
-    return "외출 중";
-  else
-    return "오류";
-}
-
-Color getRoomStatusColor(String status) {
-  if (status == "0")
-    return statusGrey;
-  else if (status == "1")
-    return statusGreen;
-  else if (status == "2")
-    return statusRed;
-  else if (status == "3")
-    return statusOrange;
-  else
-    return Colors.black;
 }
