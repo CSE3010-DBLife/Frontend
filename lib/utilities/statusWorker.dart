@@ -27,4 +27,26 @@ class StatusWorker {
     else
       return Colors.black;
   }
+
+  static String getEmployStatus(String status) {
+    if (status == "0")
+      return "휴가";
+    else if (status == "1")
+      return "출근";
+    else if (status == "2")
+      return "결근";
+    else
+      return "오류";
+  }
+
+  static Color getEmployStatusColor(String status) {
+    if (status == "0")
+      return statusGrey;
+    else if (status == "1")
+      return statusGreen;
+    else if (status == "2")
+      return statusRed;
+    else
+      return Colors.black;
+  }
 }

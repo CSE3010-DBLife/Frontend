@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_management/components/custom_title.dart';
-import 'package:hotel_management/futurebuilders/employ/summary_card_builder.dart';
+import 'package:hotel_management/futurebuilders/employ/employ_card_builder.dart';
 
 class EmployScreen extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _EmployScreenState extends State<EmployScreen> {
             ),
             Row(
               children: [
-                SummaryCardBuilder(),
+                EmployCardBuilder(),
               ],
             )
           ],

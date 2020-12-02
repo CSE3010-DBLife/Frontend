@@ -1,3 +1,3 @@
 class Api {
-  static String url = "http://foolminecraft.iptime.org:9999";
+  static String url = "http://dblife-backend-jjojw.run.goorm.io";
 }

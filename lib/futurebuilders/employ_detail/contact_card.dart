@@ -2,7 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:hotel_management/components/reusable_card.dart';
 import 'package:hotel_management/utilities/constants.dart';
 
-class ContactCardBuilder extends StatelessWidget {
+class ContactCard extends StatelessWidget {
+  ContactCard({
+    this.name,
+    this.carId,
+    this.address,
+    this.phone,
+  });
+  final String name;
+  final String carId;
+  final String address;
+  final String phone;
+
   @override
   Widget build(BuildContext context) {
     return ReusableCard(
@@ -26,7 +37,7 @@ class ContactCardBuilder extends StatelessWidget {
             children: [
               SizedBox(width: 8),
               Text(
-                '주차 번호 : 07 누 7777',
+                '주차 번호 : $carId',
                 style: Theme.of(context).textTheme.subtitle2,
               ),
             ],
@@ -36,7 +47,7 @@ class ContactCardBuilder extends StatelessWidget {
             children: [
               SizedBox(width: 8),
               Text(
-                '경기도 안산시 상록구 사3동 한양대학로 55',
+                address,
                 style: Theme.of(context).textTheme.subtitle2,
               ),
             ],
@@ -49,14 +60,14 @@ class ContactCardBuilder extends StatelessWidget {
                 decoration: cardInnerDecoration,
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  '010 - 7777 - 7777',
+                  phone,
                   style: Theme.of(context).textTheme.subtitle2,
                 ),
               ),
               Container(
                 margin: EdgeInsets.only(right: 8.0),
                 child: Text(
-                  '박아무개',
+                  name,
                   style: Theme.of(context).textTheme.subtitle1,
                 ),
               ),
