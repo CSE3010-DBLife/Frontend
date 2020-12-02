@@ -10,16 +10,22 @@ class EmployScreen extends StatefulWidget {
 class _EmployScreenState extends State<EmployScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          CustomTitle(
-            title: '직원',
-            searchIcon: Icon(Icons.search),
-            searchIconOnPressed: () {},
-          ),
-          EmployCardBuilder()
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        child: Column(
+          children: [
+            CustomTitle(
+              title: '직원(관리자용)',
+              searchIcon: Icon(Icons.search),
+              searchIconOnPressed: () {},
+            ),
+            Row(
+              children: [
+                EmployCardBuilder(),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
