@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_management/screens/booking_screen.dart';
 import 'package:hotel_management/screens/room_screen.dart';
 import 'package:hotel_management/screens/parking_screen.dart';
 import 'package:hotel_management/screens/employ_screen.dart';
+import 'package:hotel_management/screens/setting_screen.dart';
 import 'package:hotel_management/utilities/constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,8 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _children = [
     EmployScreen(),
+    BookingScreen(),
     RoomScreen(),
     ParkingScreen(),
+    SettingScreen(),
   ];
   void _onTap(int index) {
     setState(() {
@@ -49,6 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
             // ignore: deprecated_member_use
             new BottomNavigationBarItem(
               title: Padding(padding: EdgeInsets.all(0)),
+              icon: Icon(Icons.access_alarm),
+              activeIcon: Icon(Icons.access_alarm),
+            ),
+            // ignore: deprecated_member_use
+            new BottomNavigationBarItem(
+              title: Padding(padding: EdgeInsets.all(0)),
               icon: Icon(Icons.king_bed_outlined),
               activeIcon: Icon(Icons.king_bed_outlined),
             ),
@@ -57,7 +67,12 @@ class _HomeScreenState extends State<HomeScreen> {
               title: Padding(padding: EdgeInsets.all(0)),
               icon: Icon(Icons.car_rental),
               activeIcon: Icon(Icons.car_rental),
-            )
+            ),
+            new BottomNavigationBarItem(
+              title: Padding(padding: EdgeInsets.all(0)),
+              icon: Icon(Icons.settings),
+              activeIcon: Icon(Icons.settings),
+            ),
           ],
         ),
       ),

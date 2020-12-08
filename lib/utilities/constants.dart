@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
 ThemeData darkThemeData = ThemeData(
+  dividerColor: Colors.grey,
+  dialogBackgroundColor: Color(0xFF181818),
+  primaryColor: Color(0xFF181818),
+  accentColor: Colors.blue.withOpacity(.5),
+  accentTextTheme: TextTheme(
+    bodyText1: TextStyle(color: Colors.black),
+    bodyText2: TextStyle(color: Colors.red),
+  ),
+  disabledColor: Color(0xFFE7E7E7).withOpacity(.5),
   inputDecorationTheme: InputDecorationTheme(
     enabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(color: const Color(0xFFE7E7E7)),
@@ -14,15 +23,15 @@ ThemeData darkThemeData = ThemeData(
   ),
   scaffoldBackgroundColor: Color(0xFF121212),
   textTheme: TextTheme(
+    caption: TextStyle(color: Color(0xFFE7E7E7), fontSize: 10, fontFamily: 'Godo-M'),
+    bodyText2: TextStyle(color: Color(0xFFE7E7E7), fontSize: 10, fontFamily: 'Godo-M'),
     subtitle1: TextStyle(color: Color(0xFFE7E7E7), fontSize: 15, fontFamily: 'Godo-M'),
     subtitle2: TextStyle(color: Color(0xFFD1D1D1), fontSize: 10, fontFamily: 'Godo-M'),
     headline6: TextStyle(color: Color(0xFFE7E7E7), fontSize: 20, fontFamily: 'Godo-M'),
+    button: TextStyle(color: Colors.blue, fontSize: 10, fontFamily: 'Godo-M'),
   ),
   iconTheme: IconThemeData(color: Color(0xFFE7E7E7)),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: Color(0xFF181818),
-      selectedIconTheme: IconThemeData(color: Colors.white),
-      unselectedIconTheme: IconThemeData(color: Color(0xFFD1D1D1))),
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Color(0xFF181818), selectedIconTheme: IconThemeData(color: Colors.white), unselectedIconTheme: IconThemeData(color: Color(0xFFD1D1D1))),
 );
 
 Color statusRed = Color(0xFFE65F3F);

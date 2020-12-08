@@ -4,8 +4,8 @@ class ParkingDetail {
   String cusName;
   String employRole;
   String roomId;
-  String checkInDate;
-  String checkOutDate;
+  List<dynamic> checkInDate;
+  List<dynamic> checkOutDate;
   String carId;
 
   ParkingDetail({
