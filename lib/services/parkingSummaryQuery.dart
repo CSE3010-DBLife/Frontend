@@ -6,6 +6,7 @@ import 'package:hotel_management/utilities/api.dart';
 class ParkingSummaryQuery {
   Future<ParkingSummary> getParkingSummary() async {
     String apiUrl = Api.url + "/show/parking";
+    print(apiUrl);
     ParkingSummary parkingSummary;
     try {
       NetWorkHelper networkHelper = NetWorkHelper(url: apiUrl);

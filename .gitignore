@@ -20,3 +20,5 @@ doc/api/
 *.js.deps
 *.js.map
 *.log
+lib/models/employ.dart
+.vscode/launch.json

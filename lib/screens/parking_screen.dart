@@ -13,12 +13,8 @@ class _ParkingScreenState extends State<ParkingScreen> {
     return Container(
       child: Column(
         children: [
-          CustomTitle(
-            title: '주차 관리',
-            searchIcon: Icon(Icons.search),
-            searchIconOnPressed: () {},
-          ),
-          ParkingCardBuilder()
+          CustomTitle(title: '주차 관리'),
+          ParkingCardBuilder(),
         ],
       ),
     );

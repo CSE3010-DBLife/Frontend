@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_management/components/reusable_loading.dart';
 import 'package:hotel_management/components/reusable_status.dart';
 import 'package:hotel_management/futurebuilders/employ_detail/contact_card.dart';
 import 'package:hotel_management/models/employ_detail.dart';
@@ -16,7 +17,10 @@ class EmployDetailCardBuilder extends StatelessWidget {
     return FutureBuilder<EmployDetail>(
       future: _employDetailQuery.getEmployData(employId),
       builder: (context, AsyncSnapshot<EmployDetail> snapshot) {
-        if (snapshot.data == null || !snapshot.hasData) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return ReusableLoading();
+        }
+        if (!snapshot.hasData) {
           return Center(
             child: Text(
               '직원 정보가 없습니다',
@@ -24,7 +28,6 @@ class EmployDetailCardBuilder extends StatelessWidget {
             ),
           );
         }
-
         final _data = snapshot.data;
         return Column(
           children: [
@@ -42,10 +45,10 @@ class EmployDetailCardBuilder extends StatelessWidget {
               ),
             ),
             ContactCard(
-              name: _data.name ?? "오류",
+              name: _data.name.toString() ?? "오류",
               carId: _data.carId ?? "오류",
-              address: _data.address ?? "오류",
-              phone: _data.phone ?? "오류",
+              phone: _data.phone.toString() ?? "오류",
+              role: _data.role.toString() ?? "오류",
             ),
           ],
         );
